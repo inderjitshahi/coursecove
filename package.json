@@ -4,17 +4,18 @@
   "description": "api ",
   "main": "server.js",
   "scripts": {
-    "start": "SET NODE_ENV=production & node server", 
+    "start": "SET NODE_ENV=production & node server",
     "dev": "nodemon server"
   },
   "author": "Inderjit Shahi",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
-  "type":"module"
+  "type": "module"
 }
