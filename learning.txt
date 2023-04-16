@@ -9,3 +9,5 @@ Error handling
 Advance Query: filtering, sorting, pagination, populating, virtuals(reverse populating), 
 route protection, authorization
 Email , nodemailer etc.(To be learnt in details).
+NoSql injection using express-mongo-sanitize
+XSS protection, Helmet
