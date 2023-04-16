@@ -1,0 +1,11 @@
+NodeJs Core Modules(process, file, http)
+Express
+controllers
+middlewares
+Mongoose Modals
+Mongoose Hooks
+Basic CRUD
+Error handling
+Advance Query: filtering, sorting, pagination, populating, virtuals(reverse populating), 
+route protection, authorization
+Email , nodemailer etc.(To be learnt in details).

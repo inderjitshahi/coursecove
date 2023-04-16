@@ -1,39 +1,63 @@
 import express from 'express';
-import * as dotenv from 'dotenv';
 import morgan from 'morgan';
+import * as dotenv from 'dotenv';
+import { connectDB } from './config/db.js'
+import errorHandler from './middlewares/error.js';
+import fileUpload from 'express-fileupload';
+import cookieParser from 'cookie-parser';
+import path from 'path';
+import dir_name from './dirname.js';
+//Load Env variables
+dotenv.config({ path: './config/config.env' });
+
+
 //Route Files, **add file extension
 import bootcamps from './routes/bootcamp.js'
+import courses from './routes/courses.js'
+import authRouter from './routes/auth.js'
+import usersRouter from './routes/users.js'
+import reviewRouter from './routes/reviews.js'
 
-import { logger } from './middlewares/logger.js';
 
+//Connect to DataBase
+connectDB();
 
-
-dotenv.config({ path: './config/config.env' });
+//Port
 const PORT = process.env.PORT || 5000;
 
-
+//Initialize the app
 const app = express();
-
-
 
 //Middlewares---------------------
 //a function that has access to req, res life-cycle
 
-if(process.env.NODE_ENV==='development'){
+//Body Parser Middleware
+app.use(express.json());
+
+//Cookie Parser
+app.use(cookieParser());
+
+//Morgan Middleware,
+if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
+//File Upload
+app.use(fileUpload());
 
+// Set static folder
+app.use(express.static(path.join(dir_name,'public')));
 
 //Mount Routers------------------
-
 app.use('/api/v1/bootcamps', bootcamps);
+app.use('/api/v1/courses', courses);
+app.use('/api/v1/auth',authRouter);
+app.use('/api/v1/auth/users',usersRouter);
+app.use('/api/v1/reviews',reviewRouter);
 
 
-
-
-
-//--------------------------------
+//Error handler middleware, must be after Routers Mount,so that errors returned from routes can be handled
+app.use(errorHandler);
 
 app.get('/', (req, res) => {
     //express automatically sets content-type like: application/json; charset=utf-8 or text/html for simple string
@@ -50,4 +74,11 @@ app.get('/', (req, res) => {
     // or res.status(200).send({success:true,data:{id:123}})
 });
 
-app.listen(PORT, console.log(`Server Running in ${process.env.NODE_ENV} mode on port ${PORT}`));
+const server = app.listen(PORT, console.log(`Server Running in ${process.env.NODE_ENV} mode on port ${PORT}`));
+
+//Globally Handle unhandled promise rejection
+process.on('unhandledRejection', (err, promise) => {
+    console.log(`Error: ${err.message}`);
+    //close the server and exit process
+    server.close(() => process.exit(1));
+})

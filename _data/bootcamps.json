@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "5d713995b721c3bb38c1f5d1",
+    "user": "5d7a514b5d2c12c7449be047",
+    "name": "CodeWorks Bootcamp",
+    "description": "CodeWorks is a full stack JavaScript Bootcamp located in the heart of San Francisco that focuses on the technologies you need to get a high paying job as a web developer.",
+    "website": "https://codeworks.com",
+    "phone": "(555) 555-5555",
+    "email": "enroll@codeworks.com",
+    "address": "123 Main St San Francisco CA 94111",
+    "careers": ["Web Development", "UI/UX", "Business"],
+    "housing": true,
+    "jobAssistance": true,
+    "jobGuarantee": false,
+    "acceptGi": true
+  },
+  {
+    "_id": "5d713a66ec8f2b88b8f830b9",
+    "user": "5d7a514b5d2c12c7449be048",
+    "name": "HackReactor Bootcamp",
+    "description": "HackReactor has one goal, and that is to make you a rockstar developer and/or designer with a six figure salary. We teach both development and UI/UX.",
+    "website": "https://hackreactor.com",
+    "phone": "(666) 666-6666",
+    "email": "enroll@hackreactor.com",
+    "address": "456 Oak St Los Angeles CA 90015",
+    "careers": ["Web Development", "UI/UX", "Mobile Development"],
+    "housing": false,
+    "jobAssistance": true,
+    "jobGuarantee": false,
+    "acceptGi": true
+  },
+  {
+    "_id": "5d725a037b292f5f8ceff789",
+    "user": "5c8a1d5b0190b214360dc033",
+    "name": "ByteCamp",
+    "description": "Is coding your passion? ByteCamp will give you the skills and the tools to become the best developer possible. We specialize in full stack web development and data science.",
+    "website": "https://bytecamp.com",
+    "phone": "(777) 777-7777",
+    "email": "enroll@bytecamp.com",
+    "address": "789 Broadway St New York NY 10003",
+    "careers": ["Web Development", "Data Science", "Business"],
+    "housing": false,
+    "jobAssistance": false,
+    "jobGuarantee": false,
+    "acceptGi": false
+  },
+  {
+    "_id": "5d725a1b7b292f5f8ceff78b",
+    "user": "5c8a1d5b0190b214360dc035",
+    "name": "CodeHive Bootcamp",
+    "description": "At CodeHive, we are passionate about teaching the latest and greatest web development technologies to help you become a successful developer. Our programs focus on front-end and back-end web development.",
+    "website": "https://codehivebootcamp.com",
+    "phone": "(555) 555-5555",
+    "email": "enroll@codehivebootcamp.com",
+    "address": "123 Main St, Anytown USA 12345",
+    "careers": ["Web Development", "Mobile Development", "UI/UX"],
+    "housing": true,
+    "jobAssistance": true,
+    "jobGuarantee": false,
+    "acceptGi": true
+  }
+]
