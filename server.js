@@ -52,13 +52,13 @@ if (process.env.NODE_ENV === 'development') {
 app.use(fileUpload());
 
 //Sanitize Data, from no sql injection
-// app.use(mongoSanitize());
+app.use(mongoSanitize());
 
 //Add Securities headers
-// app.use(helmet());
+app.use(helmet());
 
 //Prevent XSS attacks
-// app.use(xss());
+app.use(xss());
 
 //Rate Limiting
 const limiter=rateLimit({
@@ -68,10 +68,10 @@ const limiter=rateLimit({
 app.use(limiter);
 
 //Prevent  http param pollution
-// app.use(hpp());
+app.use(hpp());
 
 //Enable Cors
-// app.use(cors());
+app.use(cors());
 
 // Set static folder
 app.use(express.static(path.join(dir_name,'public')));
