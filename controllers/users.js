@@ -1,4 +1,4 @@
-import ErrorResponse from "../utils/errorResponse.js";
+import ErrorResponse from "../utils/ErrorResponse.js";
 import asyncHandler from "../middlewares/async.js";
 import User from "../models/User.js";
 

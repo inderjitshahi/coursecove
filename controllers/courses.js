@@ -1,5 +1,5 @@
 import Course from '../models/Course.js'
-import ErrorResponse from '../utils/errorResponse.js';
+import ErrorResponse from '../utils/ErrorResponse.js';
 import asyncHandler from '../middlewares/async.js';
 import Bootcamp from '../models/Bootcamp.js';
 import { query } from 'express';

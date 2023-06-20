@@ -1,5 +1,5 @@
 import Bootcamp from '../models/Bootcamp.js'
-import ErrorResponse from '../utils/errorResponse.js';
+import ErrorResponse from '../utils/ErrorResponse.js';
 import asyncHandler from '../middlewares/async.js';
 import path from 'path'
 
