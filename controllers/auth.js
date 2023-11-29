@@ -18,7 +18,6 @@ export const register = asyncHandler(async (req, res, next) => {
         password,
         role
     });
-
     sendTokenResponse(user, 200, res);
 });
 
@@ -90,12 +89,12 @@ export const forgotPassword = asyncHandler(async (req, res, next) => {
     `;
 
     try {
-        await sendEmail({
+         await sendEmail({
             email: user.email,
             subject: `Password reset token`,
             message
         })
-        res.status(200).json({ success: true, data: "email sent" })
+        res.status(200).json({ success: true, data: "email sent " })
     } catch (error) {
         console.log(error);
         user.resetPasswordExpiry = undefined;

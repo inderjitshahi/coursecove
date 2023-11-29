@@ -1,6 +1,7 @@
 import ErrorResponse from "../utils/ErrorResponse.js";
 
 const errorHandler = (err, req, res, next) => {
+    // create a copy of the err object and set its message property to the error message. 
     let error={...err}
     error.message=err.message;
      

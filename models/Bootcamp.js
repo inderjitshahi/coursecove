@@ -140,8 +140,8 @@ BootcampSchema.pre('deleteOne', { document: false, query: true }, async function
 
 BootcampSchema.virtual('courses', {
     ref: "Course",  //Modal Name
-    localField: '_id',
-    foreignField: 'bootcamp',
+    localField: '_id',  //here it is _id, It scans Course, if bootcamp field matches the localField, it populates that course into the respective bootcamp
+    foreignField: 'bootcamp',  //filed name in Course Schema
     justOne: false,
 })
 

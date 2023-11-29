@@ -84,7 +84,6 @@ app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/auth/users', usersRouter);
 app.use('/api/v1/reviews', reviewRouter);
 
-
 //Error handler middleware, must be after Routers Mount,so that errors returned from routes can be handled
 app.use(errorHandler);
 
@@ -105,9 +104,9 @@ app.get('/', (req, res) => {
 
 const server = app.listen(PORT, console.log(`Server Running in ${process.env.NODE_ENV} mode on port ${PORT}`));
 
-//Globally Handle unhandled promise rejection
+// Handle unhandled promise rejections globally
 process.on('unhandledRejection', (err, promise) => {
     console.log(`Error: ${err.message}`);
     //close the server and exit process
     server.close(() => process.exit(1));
-})
+});

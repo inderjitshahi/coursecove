@@ -2,7 +2,7 @@ import fs from 'fs';
 import mongoose from 'mongoose';
 import dir_name from './dirname.js';  //as global __dirname is not available in es-module
 import * as dotenv from 'dotenv';
-dotenv.config({ path: './config/config.env' });
+dotenv.config();
 
 
 //Load Models

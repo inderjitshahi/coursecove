@@ -60,10 +60,13 @@ UserSchema.methods.getJWTSignedToken = function () {
 UserSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password);
 }
+
 //generate and hash password token
 UserSchema.methods.getResetPasswordToken = async function () {
     //generate token
+    //as every time a new token is to be created
     const resetToken = crypto.randomBytes(20).toString('hex');
+
     // console.log(resetToken);
     //Hash token and set to  resetPasswordToken
     this.resetPasswordToken = crypto
